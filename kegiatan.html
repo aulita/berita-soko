@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kegiatan Kecamatan Soko</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <style>
       * {
         box-sizing: border-box;
@@ -30,6 +27,7 @@
         background: linear-gradient(135deg, #2c3e50, #34495e);
         color: white;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
       }
 
       header img {
@@ -60,10 +58,12 @@
       }
 
       .nav-links {
-        display: flex;
-        justify-content: center;
         list-style: none;
         gap: 20px;
+      }
+
+      .nav-links li {
+        margin: 0 10px;
       }
 
       .nav-links a {
@@ -184,6 +184,17 @@
         }
       }
 
+      @media (min-width: 769px) {
+        .nav-links {
+          display: flex;
+          justify-content: center;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+      }
+
       @media (max-width: 480px) {
         .card-content h3,
         .card-content p {
@@ -217,10 +228,7 @@
           <img src="img/gotong_royong_kecamatan.jpg" alt="Gotong Royong" />
           <div class="card-content">
             <h3>Gotong Royong Bersama Warga</h3>
-            <p>
-              Kegiatan membersihkan lingkungan kecamatan bersama warga Desa
-              Soko.
-            </p>
+            <p>Kegiatan membersihkan lingkungan kecamatan bersama warga Desa Soko.</p>
           </div>
         </div>
 
@@ -236,10 +244,7 @@
           <img src="img/pkk.jpeg" alt="Pelantikan Ibu PKK" />
           <div class="card-content">
             <h3>Pelantikan Ibu PKK</h3>
-            <p>
-              Perkumpulan ibu-ibu PKK Kecamatan Soko setiap bulan sekali di
-              pendopo kecamatan.
-            </p>
+            <p>Perkumpulan ibu-ibu PKK Kecamatan Soko setiap bulan sekali di pendopo kecamatan.</p>
           </div>
         </div>
       </div>
