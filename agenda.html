@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agenda Kecamatan Soko</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 30px;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      width: 70px;
+      height: auto;
+    }
+
+    .header-text h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .header-text p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      color: #2c3e50;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #2980b9;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #34495e;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .agenda-card {
+      background-color: #fff;
+      border-left: 6px solid #2980b9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .agenda-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .agenda-date {
+      font-weight: bold;
+      color: #2980b9;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .agenda-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .agenda-desc {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+  .header-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-text p {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    display: block;
+    margin: 10px auto;
+  }
+
+  .agenda-card, .activity-card, .news-card {
+    padding: 15px;
+  }
+
+  .agenda-date, .agenda-title, .agenda-desc,
+  .card-content h3, .card-content p,
+  .news-date, .news-card p {
+    font-size: 0.9rem;
+  }
+}
+
+  
+    @media (max-width: 768px) {
+      .agenda-grid, .card-grid {
+        grid-template-columns: 1fr !important;
+        padding: 10px !important;
+      }
+      .agenda-card, .activity-card {
+        margin-bottom: 20px;
+      }
+      header, nav {
+        flex-direction: column !important;
+        text-align: center !important;
+      }
+      header img {
+        width: 50px !important;
+      }
+    }
+    </style>
+</head>
+<body>
+
+  <header>
+    <img src="img/logo.png" alt="Logo Kecamatan Soko">
+    <div class="header-text">
+      <h1>Agenda Kecamatan Soko</h1>
+      <p>Jadwal kegiatan dan agenda resmi pemerintah kecamatan</p>
+    </div>
+  </header>
+
+  <nav>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Berita</a>
+    <a href="kegiatan.html">Kegiatan</a>
+    <a href="agenda.html">Agenda</a>
+  </div>
+</nav>
+
+
+  <section>
+    <h2>Agenda Terdekat</h2>
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <div class="agenda-date">20 Juni 2025</div>
+        <div class="agenda-title">Rapat Koordinasi Desa</div>
+        <div class="agenda-desc">Koordinasi bulanan antara kepala desa se-Kecamatan Soko, bertempat di Aula Kecamatan.</div>
+      </div>
+
+      <div class="agenda-card">
+        <div class="agenda-date">25 Juni 2025</div>
+        <div class="agenda-title">Musyawarah Pembahasan Hari Raya Idul Adha </div>
+        <div class="agenda-desc">Pembahasan tentang hari raya idul adha dan penyembelihan hewan qurban.</div>
+      </div>
+
+      <div class="agenda-card">
+        <div class="agenda-date">1 Juli 2025</div>
+        <div class="agenda-title">Pelatihan Administrasi Perangkat Desa</div>
+        <div class="agenda-desc">Pelatihan penggunaan sistem informasi desa (SID) untuk perangkat desa baru.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-200 text-center py-6 mt-10">
+    <p class="font-semibold">Kontak Kecamatan</p>
+    <p>Jl. Raya Sokosari No. 231, Soko Tuban</p>
+    <p>Telepon: 021-123456 | WhatsApp: 0812-3456-7890</p>
+    <p>Email: pengaduan@kec-sejahtera.go.id</p>
+    <p class="text-sm mt-2">&copy; 2025 Kecamatan Soko</p>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>

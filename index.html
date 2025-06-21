@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Berita Kecamatan Soko</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 30px;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      width: 70px;
+      height: auto;
+    }
+
+    .header-text h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .header-text p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 15px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+    }
+
+    .nav-links a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2980b9;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #34495e;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .news-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .news-date {
+      font-weight: bold;
+      color: #2980b9;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="img/logo.png" alt="Logo Kecamatan Soko">
+    <div class="header-text">
+      <h1>Berita Kecamatan Soko</h1>
+      <p>Menginformasikan kegiatan masyarakat & agenda Kecamatan Soko</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰ </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Berita</a>
+      <a href="kegiatan.html">Kegiatan</a>
+      <a href="agenda.html">Agenda</a>
+    </div>
+  </nav>
+
+  <section id="berita">
+    <h2>Berita Terkini</h2>
+    <div class="news-list">
+      <div class="news-card">
+        <p class="news-date">17 Mei 2025</p>
+        <p>Kecamatan Contoh mengadakan lomba kebersihan antar RT sebagai upaya meningkatkan kepedulian lingkungan.</p>
+      </div>
+      <div class="news-card">
+        <p class="news-date">10 Mei 2025</p>
+        <p>Musyawarah Rencana Pembangunan (Musrenbang) digelar secara terbuka, dihadiri oleh perwakilan tiap dusun dan instansi terkait.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="font-semibold">Kontak Kecamatan</p>
+    <p>Jl. Raya Sokosari No. 231, Soko Tuban</p>
+    <p>Telepon: 021-123456 | WhatsApp: 0812-3456-7890</p>
+    <p>Email: pengaduan@kec-sejahtera.go.id</p>
+    <p class="text-sm mt-2">&copy; 2025 Kecamatan Soko</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
